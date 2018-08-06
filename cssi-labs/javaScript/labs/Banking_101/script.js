@@ -15,23 +15,32 @@
 let customer_name;
 let balance;
 
-function openAccount("marcyPark"){
-  balance = 0;{myBalance=balance;
+function openAccount(name,mybalance = 0){
+  balance=mybalance;
 
-  customer+name=name;// Set the value for customer_name equal to name below
+  customer_name=name;// Set the value for customer_name equal to name below
 
-  return name +" has opened a new account with a balance of &" + myBalance//write the statment you need to return here
+  return name +" has opened a new account with a balance of $" + balance;//write the statment you need to return here
 }
 
-function deposit("$200"){
-  // update the value of balance
+function deposit(value){
+balance = balance + value;
+let msg = `${customer_name} has deposited ${value}. ${customer_name}'s total balance is ${balance}.`;
+  return msg; // update the value of balance
   //return the correct statement
 }
 
-function withdraw("$100"/*argument here*/){
-  //update the value of balance
+function withdraw(amount){
+if (amount > balance){
+  let difference = amount - balance;
+  return `Sorry, ${customer_name}, you do not have enough money in your account. You need ${difference} more dollars.`;
+}
+  balance = balance - amount;
+  let mg = `${customer_name} has withdraw ${amount}. ${customer_name} has ${balance} remaining.`;
+  return mg;//updatethe value of balance
   //return the correct statement
 }
-
-// Write your script below
 console.log("script is running...");
+console.log(openAccount("James",300));
+console.log(deposit(50));
+console.log(withdraw(500));

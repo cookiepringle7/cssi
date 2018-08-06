@@ -45,14 +45,26 @@ box2.style.backgroundColor=colors[2];
 box3.style.backgroundColor=colors[2];
 }
 
-function switchcolor () {
+function switchcolor3 () {
 
+  box4.style.backgroundColor=colors[3];
+  box5.style.backgroundColor=colors[3];
 }
 
-function switchcolor () {
+function switchcolor4 () {
 
+  box4.style.backgroundColor=colors[4];
+  box5.style.backgroundColor=colors[4];
 }
 
-function switchcolor () {
+
+function switchcolor5 () {
+
+  box1.style.backgroundColor=colors[3];
+  box2.style.backgroundColor=colors[3];
+  box3.style.backgroundColor=colors[3];
+
+  box4.style.backgroundColor=colors[3];
+  box5.style.backgroundColor=colors[3];
 
 }
