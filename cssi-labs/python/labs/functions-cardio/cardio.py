@@ -1,13 +1,15 @@
 
 
-def reverse(s):
-    if len(s) == 0:
-        return s
-    else:
-        return reverse(s[1:]) + s[0]
+# sum of variables
+# boolean function
 
-s = "Exercise1"
+def isTriangle(a,b,c):
 
-print "The original string  is : ", s
+    sabc = a+b > c
+    sacb = a+c > b
+    sbca = b+c > a
 
-print "The reversed string(using recursion) is : ", reverse(s)
+if sabc and sacb and sbca
+        return True
+
+    else: return False 
