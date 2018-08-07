@@ -60,9 +60,9 @@ function switchcolor4 () {
 
 function switchcolor5 () {
 
-  box1.style.backgroundColor=colors[3];
-  box2.style.backgroundColor=colors[3];
-  box3.style.backgroundColor=colors[3];
+  box1.style.backgroundColor=colors[4];
+  box2.style.backgroundColor=colors[4];
+  box3.style.backgroundColor=colors[4];
 
   box4.style.backgroundColor=colors[3];
   box5.style.backgroundColor=colors[3];
