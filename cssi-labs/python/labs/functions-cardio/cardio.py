@@ -1,9 +1,13 @@
-def longest_word(word1,word2,word3):
 
-    if len(word1) > len(word2) and len(word1) > len(word3):
-        print word1
-    elif len(word2) > len(word1) and len(word2) > len(word3):
-        print word2
+
+def reverse(s):
+    if len(s) == 0:
+        return s
     else:
-        print word3
-longest_word("nameon", "boy", "girls")
+        return reverse(s[1:]) + s[0]
+
+s = "Exercise1"
+
+print "The original string  is : ", s
+
+print "The reversed string(using recursion) is : ", reverse(s)
