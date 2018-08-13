@@ -23,9 +23,34 @@ inside_movie = {
     "out_of": 10,
     "reviews": 463787
 }
+inside_movie["year_released"] = 2015
+inside_movie["score"] = 8.2
+inside_movie["reviews"] = 492446
+
+
+inside_movie.pop("out_of")
+
+inside_movie[genre] = ["Animation", "Adventure", "Comedy"]
+
+#printing key/values
+
+for i in inside_movie:
+    print key
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Do not edit the code above!
 
 # Write your code below to update the information in accordance with its
 # IMDB page: http://www.imdb.com/title/tt2096673/
-

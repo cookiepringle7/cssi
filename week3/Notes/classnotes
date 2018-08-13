@@ -1,0 +1,37 @@
+#STRING METHODS
+#Example:
+
+#a = "Hello World"
+#b = "Hi" * 3
+#c = "whatever you want"
+#     12345678 9
+#d = "1 is first 2 is second"
+
+# 1. capitalize ()
+    # a. capitalize() #"Hello World"
+
+# 2. count - returns the count of all the occurrences of the
+    # b. count ("H")
+
+# 3. find() - returns the index of the first occurrence of the sub-STRING
+    #parameter. If the sub-string is not present it returns -1
+
+      #c. find ("you") #9
+      #"free". find ("you") #-1
+
+# 4. lower() - returns a copy of the string with all the letters lowercase.
+      #b. lower()  # "hihihi"
+
+# 5. upper() - returns a copy of the string with all the letters uppercase
+      #b. upper()  #"HIHIHI"
+
+# 6. replace() - returns a copy of the string with all the occurrences of the
+      #old sub-string replace with the new sub-string
+
+# 7.  strip() - returns a copy of the string with all the characters in the
+         #parameter removed from the front and back of the string. If no
+         #parameter is provided, it removes white spaces
+
+        # "slips".strip('s') # "lip"
+        "Heat".strip() #"Heat"
+        
