@@ -34,7 +34,13 @@ import webapp2
 import os
 import jinja2
 import random
+from google.appenfine.api import urlfetch
+import urllib
+import json
 
+URL = 'https://www.googleapis.com/customsearch/v1?'
+KEY = 'AIzaSyBiXlnOqjWbZ5CMc5-K4Lx1RvxwdUWZwtQ'
+CX = '016629791439433559366:cr05fhnqi4m'
 
 def get_fortune():
     fortune_list=['Tomorrow, you will meet a life-changing new friend.',
@@ -59,16 +65,42 @@ class FortuneHandler(webapp2.RequestHandler):
         start_template=jinja_current_directory.get_template("templates/fortune_welcome.html")
         self.response.write(start_template.render())
 
-    def post(self):
-        random_fortune = get_fortune()
-        astro_sign = self.request.get('user_astrological_sign')
-        my_dict={'the_fortune':random_fortune, 'the_astro_sign':astro_sign}
-        end_template=jinja_current_directory.get_template("templates/fortune_results.html")
-        #astro_sign = request.form.get('user_astrological_sign')
-        self.response.write(end_template.render(my_dict))
 
+class SimpleURLFetcher(webapp2.RequestHandler):
+    def get(self):
+        query = 'cat'
+        query_params = {'key': KEY, 'cx': CX, 'q': query}
+        result = urlfetch.fetch(URL + urllib.urlencode(query_params))
+        print result 
+        if result.status_code == 200:
+            self.response.write(result.status_code)
+            self.response.write(result.content)
 
+        else:
+            self.response.status_code = result.status_code
 
+#the route mapping
 app = webapp2.WSGIApplication([
-    ('/', FortuneHandler)
+
+    ('/simple', SimpleURLFetcher)
+
 ], debug=True)
+
+
+
+
+
+#
+#     def post(self):
+#         random_fortune = get_fortune()
+#         astro_sign = self.request.get('user_astrological_sign')
+#         my_dict={'the_fortune':random_fortune, 'the_astro_sign':astro_sign}
+#         end_template=jinja_current_directory.get_template("templates/fortune_results.html")
+#         #astro_sign = request.form.get('user_astrological_sign')
+#         self.response.write(end_template.render(my_dict))
+#
+#
+#
+# app = webapp2.WSGIApplication([
+#     ('/', FortuneHandler)
+# ], debug=True)
